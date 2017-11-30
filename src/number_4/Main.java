@@ -1,5 +1,7 @@
 package number_4;
-
+/*
+4.Дан файл  с логинами и паролями. Найдите топ10 самых популярных паролей.
+*/
 import java.util.HashMap;
 import java.util.Map;
 
