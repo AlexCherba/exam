@@ -9,4 +9,11 @@ package number_1;
 
 */
 public class Main {
+    public static void main(String[] args) {
+        Teacher teacher01 = new Teacher("Dony", "Kloud", "Java");
+        Teacher teacher02 = new Teacher("Katy", "Parry", "C++");
+        Teacher teacher03 = new Teacher("Vasja", "Petya", "Cobol");
+
+
+    }
 }
