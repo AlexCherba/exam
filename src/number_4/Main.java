@@ -2,28 +2,24 @@ package number_4;
 /*
 4.Дан файл  с логинами и паролями. Найдите топ10 самых популярных паролей.
 */
+
 import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
         String file = "D:\\Workspace\\Java\\IDEA\\exam\\src\\number_4\\password.txt";
-        //String file = "password.txt";
-        FileUtils.read(file);
-        //System.out.println(FileUtils.getArrayPassword());
+        int topPass = 10;
 
-        //TreeMap<String, Integer> passMap = new TreeMap<String, Integer>();
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        Utils.read(file);
 
-        for (String s : FileUtils.getArrayPassword()) {
+        for (String s : Utils.getArrayPassword()) {
             if (map.containsKey(s)) {
-                map.put(s,map.get(s)+1);
+                map.put(s, map.get(s) + 1);
             } else {
-                map.put(s,1);
+                map.put(s, 1);
             }
         }
-        map.entrySet().stream()
-                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
-                .forEach(System.out::println);
+        Utils.printPasswords(Utils.sortFrequentPasswordList(map, topPass));
     }
 }
